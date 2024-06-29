@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		319700262C30C57000D522F6 /* ToDosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319700252C30C56100D522F6 /* ToDosViewModel.swift */; };
+		31B131402C30088A009037CD /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B1313F2C30087C009037CD /* ToDos.swift */; };
 		31EDCB9B2C2D661500504419 /* Test_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EDCB9A2C2D661500504419 /* Test_AppApp.swift */; };
 		31EDCB9D2C2D661500504419 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EDCB9C2C2D661500504419 /* ContentView.swift */; };
 		31EDCB9F2C2D661800504419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31EDCB9E2C2D661800504419 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		319700252C30C56100D522F6 /* ToDosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosViewModel.swift; sourceTree = "<group>"; };
+		31B1313F2C30087C009037CD /* ToDos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDos.swift; sourceTree = "<group>"; };
 		31EDCB972C2D661500504419 /* Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EDCB9A2C2D661500504419 /* Test_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_AppApp.swift; sourceTree = "<group>"; };
 		31EDCB9C2C2D661500504419 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		31EDCB992C2D661500504419 /* Test App */ = {
 			isa = PBXGroup;
 			children = (
+				319700252C30C56100D522F6 /* ToDosViewModel.swift */,
+				31B1313F2C30087C009037CD /* ToDos.swift */,
 				31EDCB9A2C2D661500504419 /* Test_AppApp.swift */,
 				31EDCB9C2C2D661500504419 /* ContentView.swift */,
 				31EDCB9E2C2D661800504419 /* Assets.xcassets */,
@@ -83,6 +89,8 @@
 			dependencies = (
 			);
 			name = "Test App";
+			packageProductDependencies = (
+			);
 			productName = "Test App";
 			productReference = 31EDCB972C2D661500504419 /* Test App.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,8 @@
 				Base,
 			);
 			mainGroup = 31EDCB8E2C2D661500504419;
+			packageReferences = (
+			);
 			productRefGroup = 31EDCB982C2D661500504419 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319700262C30C57000D522F6 /* ToDosViewModel.swift in Sources */,
 				31EDCB9D2C2D661500504419 /* ContentView.swift in Sources */,
 				31EDCB9B2C2D661500504419 /* Test_AppApp.swift in Sources */,
+				31B131402C30088A009037CD /* ToDos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +292,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +322,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

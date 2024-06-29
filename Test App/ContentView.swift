@@ -1,21 +1,24 @@
-//
-//  ContentView.swift
-//  Test App
-//
-//  Created by Cyril Kurmann on 27.06.2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject
+    private var viewModel = ToDosViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            List($viewModel.todos){
+                $todoItem in
+                HStack{
+                    Image(systemName: todoItem.isCompleted ? "largecircle.fill.circle" : "circle").imageScale(.large).foregroundColor(.accentColor)
+                        .onTapGesture {
+                            todoItem = viewModel.setCompleted(todoItem: todoItem)
+                        }
+                    Text(todoItem.title)
+                    
+                }
+            }
+            .navigationBarTitle("ToDo's", displayMode: .inline)
         }
-        .padding()
     }
 }
 
