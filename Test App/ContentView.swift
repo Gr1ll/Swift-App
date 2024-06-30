@@ -11,7 +11,7 @@ struct ContentView: View {
                 HStack{
                     Image(systemName: todoItem.isCompleted ? "largecircle.fill.circle" : "circle").imageScale(.large).foregroundColor(.accentColor)
                         .onTapGesture {
-                            todoItem = viewModel.setCompleted(todoItem: todoItem)
+                           todoItem = viewModel.setCompleted(todoItem: todoItem)
                         }
                     Text(todoItem.title)
                     

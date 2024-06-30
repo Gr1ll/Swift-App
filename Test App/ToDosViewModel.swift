@@ -18,8 +18,20 @@ class ToDosViewModel: ObservableObject {
     }
     
     func setCompleted(todoItem: ToDos) -> ToDos {
-        var updatedTodo = todoItem
-        updatedTodo.isCompleted.toggle()
-        return updatedTodo
+        if checkConnection() == false {
+            self.fetchToDos();
+            return todoItem;
+        }
+        if todoItem._id == "" {
+            self.fetchToDos();
+            return todoItem;
+        }
+        var newToDoItem = todoItem;
+        newToDoItem.isCompleted.toggle();
+        let updatedToDoItem = newToDoItem;
+        Task {
+            await updateDataToAPI(todoItem: updatedToDoItem);
+        }
+        return updatedToDoItem;
     }
 }
