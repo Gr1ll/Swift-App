@@ -13,6 +13,7 @@ class ToDosViewModel: ObservableObject {
             let fetchedToDos = await getDataFromAPI()
             DispatchQueue.main.async {
                 self.todos = fetchedToDos
+                print(self.todos)
             }
         }
     }
@@ -33,5 +34,12 @@ class ToDosViewModel: ObservableObject {
             await updateDataToAPI(todoItem: updatedToDoItem);
         }
         return updatedToDoItem;
+    }
+    
+    func addItem(todoTitle: String){
+        Task{
+            await addItemToAPI(todoTitle: todoTitle)
+            self.fetchToDos();
+        }
     }
 }

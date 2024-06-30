@@ -13,7 +13,7 @@ struct ToDos: Identifiable{
 }
 
 func checkConnection() -> Bool {
-    guard let url = URL(string: "http://localhost:9090/todo/") else {
+    guard let url = URL(string: "https://api.cyrilk.dev/todo/") else {
         return false
     }
 
@@ -42,7 +42,7 @@ func checkConnection() -> Bool {
 }
  
 func getDataFromAPI() async -> [ToDos] {
-    let url = URL(string: "http://localhost:9090/todo/")
+    let url = URL(string: "https://api.cyrilk.dev/todo/")
     
     guard let url = url else {
         return [
@@ -71,7 +71,7 @@ func getDataFromAPI() async -> [ToDos] {
 
 func updateDataToAPI(todoItem: ToDos) async -> Bool {
     
-    guard let url = URL(string: "http://localhost:9090/todo/") else {
+    guard let url = URL(string: "https://api.cyrilk.dev/todo/") else {
         return false
     }
 
@@ -98,5 +98,32 @@ func updateDataToAPI(todoItem: ToDos) async -> Bool {
         }
     } catch {
         return false
+    }
+}
+
+func addItemToAPI(todoTitle: String) async{
+    guard let url = URL(string: "https://api.cyrilk.dev/todo/") else {
+        return;
+    }
+
+    var request = URLRequest(url: url);
+    request.httpMethod = "POST";
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type");
+    
+    let todoDict: [String: Any] = [
+        "title": todoTitle,
+        "isCompleted": false
+    ];
+
+    do {
+        let jsonData = try JSONSerialization.data(withJSONObject: todoDict, options: []);
+        request.httpBody = jsonData;
+
+        let (_, response) = try await URLSession.shared.data(for: request);
+        
+        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+        } else {
+        }
+    } catch {
     }
 }
